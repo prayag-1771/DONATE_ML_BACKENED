@@ -20,6 +20,14 @@ app.get("/health", (req, res) => {
 
 const PORT = process.env.PORT || 4000;
 
+app.post("/roundup-donation", (req, res) => {
+  const { amount, source } = req.body;
+
+  console.log("Round-up donation request:", amount, source);
+
+  res.json({ ok: true });
+});
+
 app.listen(PORT, () => {
   console.log("Payment backend running on port", PORT);
 });
